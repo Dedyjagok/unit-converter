@@ -195,4 +195,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-Made by (Dedy Hutahaean Putra)[https://github.com/Dedyjagok]
+Made by [Dedy Hutahaean Putra](https://github.com/Dedyjagok)
