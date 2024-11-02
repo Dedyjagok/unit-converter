@@ -78,9 +78,10 @@
 </head>
 <body>
     <?php include 'layout/header.html'?>
-    <form id= 'weightok' action="weight.php" method="GET">
+    <form id= 'weightok' action="weight.php" method="GET" onsubmit="return validateForm()">
         <label for = "weight">Weight :</label>
-        <input type="text" name="weight" id="weight">
+        <input type="number" name="weight" id="weight">
+        <label for="unit_from">Unit to convert from :</label>
         <select name="unit_from" id="unit_from">
             <option value="kg">Kilogram</option>
             <option value="g">Gram</option>
@@ -105,6 +106,6 @@
             }
         ?>
     </form>
-
+    <script src="js/script.js"></script>
 </body>
 </html>

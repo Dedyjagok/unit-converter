@@ -42,11 +42,11 @@ function convertTemperature($temperature, $unit_from, $unit_to) {
 }
 
 $result = '';
-if (isset($_GET['temperature']) && isset($_GET['unit_from']) && isset($_GET['unit_converter'])) {
+if (isset($_GET['temperature']) && isset($_GET['unit_from']) && isset($_GET['unit_convert'])) {
     $temperature = $_GET['temperature'];
     $unit_from = $_GET['unit_from'];
-    $unit_converter = $_GET['unit_converter'];
-    $result = convertTemperature($temperature, $unit_from, $unit_converter);
+    $unit_convert = $_GET['unit_convert'];
+    $result = convertTemperature($temperature, $unit_from, $unit_convert);
 }
 ?>
 
@@ -61,18 +61,20 @@ if (isset($_GET['temperature']) && isset($_GET['unit_from']) && isset($_GET['uni
 <body>
     <?php include 'layout/header.html'?>
     <div>
-        <form id="temperatureok" action="temperature.php" method="GET">
+        <form id="temperatureok" action="temperature.php" method="GET" onsubmit="return validateForm()">
             <label for="temperature">Temperature</label>
-            <input name="temperature" type="number" step="any" required>
-            <select name="unit_from">
+            <input name="temperature" id="temperature" type="number" step="any" required>
+            <br>
+            <label for="unit_from">Unit to convert from :</label>
+            <select name="unit_from" id="unit_from">
                 <option value="c">Celsius</option>
                 <option value="f">Fahrenheit</option>
                 <option value="r">Reaumur</option>
                 <option value="k">Kelvin</option>
             </select>
             <br>
-            <label for="unit_converter">Unit convert to :</label>
-            <select name="unit_converter">
+            <label for="unit_convert">Unit convert to :</label>
+            <select name="unit_convert" id="unit_convert">
                 <option value="c">Celsius</option>
                 <option value="f">Fahrenheit</option>
                 <option value="r">Reaumur</option>
@@ -81,9 +83,10 @@ if (isset($_GET['temperature']) && isset($_GET['unit_from']) && isset($_GET['uni
             <br>
             <input class="submit" type="submit" value="Convert">
             <?php if ($result !== ''): ?>
-            <p>Converted Temperature: <?php echo htmlspecialchars($result); ?></p>
-        <?php endif; ?>
+                <p>Converted Temperature: <?php echo htmlspecialchars($result); ?></p>
+            <?php endif; ?>
         </form>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

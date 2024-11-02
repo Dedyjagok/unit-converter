@@ -107,9 +107,9 @@
 </head>
 <body>
     <?php include 'layout/header.html'?>
-    <form id = 'lengthok' action = "length.php" method = "GET" >
+    <form id = 'lengthok' action = "length.php" method = "GET" onsubmit="return validateForm()" >
         <label for="length">Length :</label>
-        <input type="text" name="length" id="length">
+        <input type="number" name="length" id="length">
         <br>
         <label for="unit_from">Unit to convert from :</label>
         <select name="unit_from" id="unit_from">
@@ -141,5 +141,6 @@
 
 
     </form>
+    <script src="js/script.js"></script>
 </body>
 </html>
