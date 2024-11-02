@@ -58,6 +58,22 @@ input[type="number"], select {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+input[type="number"]:focus, select:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    animation: shine 1s infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+    }
 }
 
 .submit {
