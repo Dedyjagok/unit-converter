@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-    <h1>Unit Converter</h1>
-    <ul class = 'menu'>
-        <li class = "menu"><a href="length.php">Length</a></li>
-        <li class = "menu"><a href="weight.php">Weight</a></li>
-        <li class = "menu"><a href="temperature.php">Temperature</a></li> 
-    </ul>
-    </header>
+    <?php include 'layout/header.html'?>
+    <?php include 'layout/footer.html'?>
 </body>
 </html>
