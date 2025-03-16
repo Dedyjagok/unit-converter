@@ -145,3 +145,225 @@ header {
         font-size: 0.8em;
     }
 }
+
+#lengthok, #weightok, #temperatureok, #currencyok {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffffff; /* Changed to white */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.main-header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 2.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    margin: 5px 10px;
+}
+
+.menu-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.menu-item a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        position: relative;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    .main-nav.active .menu {
+        max-height: 300px;
+    }
+    
+    .menu-item {
+        text-align: center;
+        margin: 0;
+    }
+    
+    .menu-item a {
+        padding: 12px;
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.1);
+        margin-bottom: 1px;
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+}
+
+.main-footer {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-info {
+    margin: 10px 0;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer-info a, .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-info a:hover, .footer-links a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.license {
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links li {
+    margin: 5px 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links ul {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links ul {
+        flex-direction: column;
+    }
+
+    .footer-links li {
+        margin: 8px 0;
+    }
+}
