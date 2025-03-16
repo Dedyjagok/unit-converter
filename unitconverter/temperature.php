@@ -88,5 +88,6 @@ if (isset($_GET['temperature']) && isset($_GET['unit_from']) && isset($_GET['uni
         </form>
     </div>
     <script src="js/script.js"></script>
+    <?php include 'layout/footer.html'?>
 </body>
 </html>
